@@ -14,6 +14,19 @@ for (var i = 0; i < 9; i++){
     hourDiv.attr("class", "row");
     plannerBox.append(hourDiv);
     hourColor(i, hourDiv);
+    
+    var labels = ["9a", "10a", "11a", "12p", "1p", "2p", "3p", "4p", "5p"];
+    var labelDiv = $("<div>");
+    labelDiv.attr("class", "col-md-1 hour");
+    labelDiv.text((labels[i]).toString());
+    hourDiv.append(labelDiv);
+    
+    var eventForm = $("<form>");
+    hourDiv.append(eventForm);
+    var eventInput = $("<input>");
+    eventInput.attr("type", "text");
+    eventInput.attr("placeholder", "Add event");
+    eventForm.append(eventInput);
 }
 
 function hourColor(hour, div){
