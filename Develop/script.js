@@ -12,6 +12,7 @@ console.log(currentTime);
 for (var i = 0; i < 9; i++){
     var hourDiv = $("<div>");
     hourDiv.attr("class", "row");
+    hourDiv.attr("id", i.toString());
     plannerBox.append(hourDiv);
     hourColor(i, hourDiv);
     
@@ -36,11 +37,13 @@ for (var i = 0; i < 9; i++){
 }
 
 function hourColor(hour, div){
-    if (hour + 9 === rightNow){
-        div.css("background-color", "DodgerBlue");
-    } else if ( hour + 9 > rightNow){
+    if (hour + 9 < currentTime){
+        div.css("background-color", "Silver");
+    } else if (hour + 9 > currentTime){
         div.css("background-color", "teal");
     } else {
-        div.css("background-color", "Silver");
+        div.css("background-color", "DodgerBlue");
     }
+    console.log(currentTime);
+    console.log(hour);
 }
