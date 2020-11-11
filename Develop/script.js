@@ -22,11 +22,17 @@ for (var i = 0; i < 9; i++){
     hourDiv.append(labelDiv);
     
     var eventForm = $("<form>");
+    eventForm.attr("class", "col-md-10");
     hourDiv.append(eventForm);
     var eventInput = $("<input>");
+    eventInput.attr("class", "col-md-12");
     eventInput.attr("type", "text");
     eventInput.attr("placeholder", "Add event");
     eventForm.append(eventInput);
+
+    var saveBtn = $("<button>");
+    saveBtn.attr("class", "saveBtn col-md-1");
+    hourDiv.append(saveBtn); 
 }
 
 function hourColor(hour, div){
